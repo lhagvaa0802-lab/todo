@@ -90,7 +90,7 @@ function allBtn() {
   filterButtonsAll.style.color = "white";
   filterButtonsActive.style.color = "black";
   filterButtonsCompleted.style.color = "black";
-  createResultMessage();
+
   renderTasks(tasks);
 }
 function activeBtn() {
@@ -102,7 +102,6 @@ function activeBtn() {
   filterButtonsAll.style.color = "black";
   filterButtonsCompleted.style.color = "black";
 
-  createResultMessage();
   renderTasks(activeTasks);
 }
 function completedBtn() {
@@ -113,7 +112,7 @@ function completedBtn() {
   filterButtonsCompleted.style.color = "white";
   filterButtonsActive.style.color = "black";
   filterButtonsAll.style.color = "black";
-  createResultMessage();
+
   renderTasks(completedTasks);
 }
 
