@@ -30,8 +30,8 @@ const renderTasks = (taskArr) => {
   let taskItems = "";
 
   taskArr.forEach((task) => {
-    const taskItem = createTaskItem(task);
-    taskItems += taskItem;
+   
+    taskItems += createTaskItem(task);
   });
 
   taskList.innerHTML = taskItems;
@@ -42,16 +42,18 @@ const createTaskItem = (task) => {
   return `
         <div class="task-list-item">
            <div class="task-item-left">
-             <input type="checkbox" id="${task.id}" ${
-    task.isCompleted && "checked"
-  } onchange="updateTask(${task.id})"/> 
-            <p class="task-text ${task.isCompleted && "completed"}">${
+     <input type="checkbox"${task.isCompleted ? "checked" : ""}
+  onchange="updateTask(${task.id})"
+/>
+
+            <p class="task-text ${task.isCompleted ? "completed" : ""}">${
     task.text
   }</p>
             </div>
-            <button id="task-delete" class='delete_btn ${
-              task.isCompleted && "show_delete"
-            }' onclick="deleteBtn(${task.id})">Delete</button>
+            <button class="delete_btn ${task.isCompleted ? "show_delete" : ""}"
+  onclick="deleteBtn(${task.id})"
+>
+Delete</button>
         </div>`;
 };
 
